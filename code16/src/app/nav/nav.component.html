@@ -1,0 +1,13 @@
+ <!-- routerLinkActive es para indicar si estoy en la ruta no vale para el primer caso ya que ocntiene   -->
+    <!-- Para el primer caso [routerLinkActiveOptions] -->
+
+<header>
+  <div>
+    &#9776;
+  </div>
+  <nav>    
+    <a routerLink="/" [routerLinkActiveOptions]= "{exact: true}" routerLinkActive= "activo" >Inicio</a>  
+    <a routerLink="/listado-clientes" routerLinkActive= "activo" >Listado de clientes</a>
+    <a routerLink="/recursos-humanos" routerLinkActive= "activo" >RRHH</a>     
+  </nav>
+</header>

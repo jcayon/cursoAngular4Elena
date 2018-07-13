@@ -1,0 +1,90 @@
+<table>
+  <tr>
+    <td>Pipe</td>
+    <td>Valor sin pipe</td>
+    <td>Opcion</td>
+    <td>Salida con pipe</td>
+  </tr>
+   <tr>
+        <td>LowerCase</td>
+        <td>{{texto}}</td>
+        <td></td>
+        <td>{{texto | lowercase}}</td>
+      </tr>
+      <tr>
+          <td>UpperCase</td>
+          <td>{{texto}}</td>
+          <td></td>
+          <td>{{texto | uppercase}}</td>
+        </tr>
+        <tr>
+            <td>TitleCase</td>
+            <td>{{texto}}</td>
+            <td></td>
+            <td>{{texto | titlecase}}</td>
+          </tr>
+
+          <tr>
+              <td>Slice</td>
+              <td>{{id}}</td>
+              <td>-3</td>
+              <td>{{id | slice:-3}}</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>{{fecha}}</td>
+              <td>"dd/mm/yy hh:mm"</td>
+              <td>{{fecha | date: "dd/mm/yy hh:mm"}}</td>
+            </tr>
+            <tr>
+              <td>Date Long</td>
+              <td>{{fecha}}</td>
+              <td>"Long"</td>
+              <td>{{fecha | date: "long"}}</td>
+            </tr>
+            <tr>
+              <td>Decimal</td>
+              <td>{{importe}}</td>
+              <td> '4.2-2' </td>
+              <td>{{importe | number: '4.2-2'}}</td>
+            </tr>
+            
+            <tr>
+              <td>Porcent</td>
+              <td>{{aciertos}}</td>
+              <td> '2.2-2' </td>
+              <td>{{aciertos | percent: '2.2-2'}}</td>
+            </tr>
+              
+            <tr>
+                <td>Current</td>
+                <td>{{importe}}</td>
+                <td> 'EUR' : true </td>
+                <td>{{importe | currency: 'EUR' : true}}</td>
+              </tr>
+
+              <tr>
+                  <td>Json</td>
+                  <td>{{jugador}}</td>
+                  <td> </td>
+                  <td> <pre>{{jugador | json }}  </pre></td>
+                </tr>
+
+                <tr>
+                    <td>Pipe propio</td>
+                    <td>4</td>
+                    <td> </td>
+                    <td> <pre>{{cantidad | numeros: 4 }}  </pre></td>
+                  </tr>
+
+                  <tr>
+                      <td>Pipe propio con moneda opcional</td>
+                      <td>6 y 'EUR'</td>
+                      <td> </td>
+                      <td> <pre>{{cantidad | numeros: 6 : 'EUR' }}  </pre></td>
+                    </tr>
+
+
+    
+
+</table>

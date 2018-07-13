@@ -1,0 +1,51 @@
+<h1> Ejemplo de formulario model driven/reactive forms
+<form [formGroup]= "formFra" (ngSubmit)="creaFra()">
+    <div>
+        <label for= "cliente"> Cliente </label>
+        <input type="text" id="cliente" formControlName="cliente">
+      </div>
+      <div>
+            <label for= "cif"> CIF
+                <span class= "noValido" *ngIf="formFra.get('cif').hasError('checkCIF') && formFra.get('cif').value.length > 0 ">
+                    El cif debe comenzar por letra
+                </span>
+                <span class= "noValido" *ngIf="formFra.get('cif').hasError('required') && formFra.get('cif')touched">
+                        El campo es obligatorio
+                    </span>
+               <!--  <span class="noValido" *ngIf="cif.invalid && cif.touched" >El campo es obligatorio </span> -->
+            </label>
+            <input type="text" id="cif" formControlName="cif"> <!-- #cif="ngModel"> -->
+          </div>
+      <div>
+        <label for= "fecha"> fecha de factura  </label>
+        <input type="date" id="fecha" formControlName="fecha">
+      </div>
+      <div>
+        <label for= "base"> base imponible   </label>
+        <input type="number" id="base" formControlName="base">
+      </div>
+      <div formGroupName= "datosIVA" >
+        <div>
+            <label for= "tipo"> % IVA  </label>
+            <select id="tipo" formControlName="tipo">
+                <option value=0> 0% </option>
+                <option value=0.4> 4% </option>
+                <option value=0.1> 10% </option>
+                <option value=0.21> 21% </option>
+            </select>
+        </div>      
+        <div>
+            <label for= "iva"> importe iva </label>
+            <input type="number" id="iva" formControlName="iva" value= "{{formFra.value.datosIVA.iva}}">
+        </div>
+        </div>
+      <div>
+          <label for= "total"> total con iva </label>
+          <input type="number" id="total" formControlName="total"  value= "{{formFra.value.datosIVA.total}}">
+      </div>
+      <div>
+        <button tyoe="submit" >Añadir factura </button>
+      </div>
+</form>
+<hr>
+<pre>{{ formFra.value | json }}</pre>
